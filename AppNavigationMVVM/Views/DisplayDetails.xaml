@@ -1,0 +1,93 @@
+﻿<Page
+    x:Class="AppNavigationMVVM.Views.DisplayDetails"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AppNavigationMVVM.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{Binding SecondPageInstance, Source={StaticResource Locator}}"
+    >
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.4*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0"   Margin="10,0,0,0">
+            <TextBlock Text="HOLO" Style="{ThemeResource TitleTextBlockStyle}" Margin="3"/>
+            <TextBlock Text="details" Margin="0,-25,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </StackPanel>
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="1" Grid.Column="0" >
+            <TextBlock Text="Name" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="0" Margin="19,9.5,19,0">
+            <TextBlock Text="Phone" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="0" Margin="19,9.5,19,0">
+            <TextBlock Text="Email" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="4" Grid.Column="0" Margin="19,9.5,19,0">
+            <TextBlock Text="Birth Date" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="5" Grid.Column="0" Margin="19,9.5,19,0">
+            <TextBlock Text="Gender" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="6" Grid.Column="0" Margin="19,9.5,19,0">
+            <TextBlock Text="Address" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource BodyTextBlockStyle}"/>
+        </Grid>
+        <Grid Grid.Row="7" Grid.Column="0" Margin="19,9.5,19,0">
+            <TextBlock Text="City" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="8" Grid.Column="0" Margin="19,9.5,19,0">
+            <TextBlock Text="Zip Code" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1" Margin="19,9.5,19,0">
+            <TextBlock x:Name="name"  HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Name}"/>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="1" Margin="19,9.5,19,0">
+            <TextBlock x:Name="phone"  HorizontalAlignment="Left" Text="{Binding Phonenumber}" VerticalAlignment="Center" FontSize="25" />
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="1" Margin="19,9.5,19,0">
+            <TextBlock x:Name="email"  HorizontalAlignment="Left" Text="{Binding Email}" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="25" />
+        </Grid>
+        <Grid Grid.Row="4" Grid.Column="1" Margin="19,9.5,19,0">
+            <TextBlock x:Name="dob"  HorizontalAlignment="Left" Text="{Binding Dob}" VerticalAlignment="Center" FontSize="20" TextWrapping="Wrap"/>
+        </Grid>
+        <Grid Grid.Row="5" Grid.Column="1" Margin="19,9.5,19,0">
+            <TextBlock x:Name="gender"  HorizontalAlignment="Left" Text="{Binding Gender}" VerticalAlignment="Center" FontSize="25" />
+        </Grid>
+        <Grid Grid.Row="6" Grid.Column="1" Margin="19,9.5,19,0">
+            <TextBlock x:Name="address"  HorizontalAlignment="Left" Text="{Binding Address}" VerticalAlignment="Center" FontSize="25"/>
+        </Grid>
+        <Grid Grid.Row="7" Grid.Column="1" Margin="19,9.5,19,0">
+            <TextBlock x:Name="city"  HorizontalAlignment="Left" Text="{Binding City}" VerticalAlignment="Center" FontSize="25" />
+        </Grid>
+        <Grid Grid.Row="8" Grid.Column="1" Margin="19,9.5,19,0">
+            <TextBlock x:Name="zip"  HorizontalAlignment="Left" Text="{Binding Zipcode}" VerticalAlignment="Center" FontSize="25" />
+        </Grid>
+
+    </Grid>
+</Page>
